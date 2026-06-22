@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Kristian</title>
+  <link rel="stylesheet" href="Projetos.css">
+</head>
+<body>
+
+  <section class="title">
+
+    <p class="section-subtitle">PORTFOLIO PROFISSIONAL</p>
+
+    <h1>Projetos.</h1>
+
+    <p class="section-text">
+      Aliando um design de interface de alto nível ao desenvolvimento de sistemas robustos, fluidos e totalmente focados na experiência do usuário.
+    </p>
+
+    <div class="projects-gallery">
+      
+      <div class="project-block">
+        <h2 class="block-title">Monster Project</h2>
+        <div class="project-row row-of-3">
+          <div class="project-card">
+            <img src="IMGs/MONSTER 1.PNG" alt="Monster Layout 1" class="zoomable-img">
+          </div>
+          <div class="project-card">
+            <img src="IMGs/MONSTER 2.PNG" alt="Monster Layout 2" class="zoomable-img">
+          </div>
+          <div class="project-card">
+            <img src="IMGs/MONSTER 3.PNG" alt="Monster Layout 3" class="zoomable-img">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-block">
+        <h2 class="block-title">App SwagShop</h2>
+        <div class="project-row row-of-2">
+          <div class="project-card">
+            <img src="IMGs/App SwagShop 1.PNG" alt="Burger App 1" class="zoomable-img">
+          </div>
+          <div class="project-card">
+            <img src="IMGs/App SwagShop 2.PNG" alt="Burger App 2" class="zoomable-img">
+          </div>
+          <div class="project-card">
+            <img src="IMGs/App SwagShop 3.PNG" alt="Burger App 3" class="zoomable-img">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgAmpliada">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgAmpliada");
+    const closeModal = document.querySelector(".close-modal");
+
+    document.querySelectorAll('.zoomable-img').forEach(img => {
+      img.addEventListener('click', function() {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      });
+    });
+    closeModal.addEventListener('click', () => {
+      modal.style.display = "none";
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+
+<a href="index.html" class="btn-back">
+  <img src="IMGs/Inicioicon.png" alt="Voltar" class="imgicon">
+</a>
+</body>
+</html>
